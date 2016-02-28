@@ -1,0 +1,10 @@
+{
+  "name": "user_login",
+  "dependencies": {
+    "jquery": "^2.2.1",
+    "angular": "^1.5.0",
+    "angular-ui-router": "^0.2.18",
+    "bootstrap": "^3.3.6",
+    "satellizer": "^0.14.0"
+  }
+}
