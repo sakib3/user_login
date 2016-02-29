@@ -14,6 +14,10 @@ var elixir = require('laravel-elixir');
 elixir(function(mix) {
     mix
     //.sass('app.scss')
+
+    //enable php unit test
+    .phpUnit()
+    
     .copy(
       'vendor/bower_components/jquery/dist/jquery.min.js',
       'public/js/vendor/jquery.js'

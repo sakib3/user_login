@@ -11,9 +11,37 @@ class ExampleTest extends TestCase
      *
      * @return void
      */
-    public function testBasicExample()
+    public function it_shoud_show_the_main_view()
     {
         $this->visit('/')
-             ->see('Laravel 5');
+             ->see('Main View');
+    }
+
+    /** @test */
+    public function post_api_authenticate_returns_json()
+    {
+       $this->json('POST', '/api/authenticate', ['email' => 'Test','password'=> 'password'])
+            ->seeJson([
+                'error' => 'invalid_credentials',
+            ]);
+
+    }
+    /** @test */
+    public function post_api_authenticate_response_401()
+    {
+      $response = $this->call('POST', '/api/authenticate', ['email' => 'Test','password'=> 'password']);;
+
+      $this->assertEquals(401, $response->status());
+    }
+
+
+    /** @test */
+    public function post_api_authenticate_response_json_has_key_named_token()
+    {
+      $this->json('POST', '/api/authenticate', ['email' => 'sakib3@gmail.com','password'=> 'secret'])
+            ->seeJsonStructure([
+                  '*' => 'token'
+
+              ]);
     }
 }
