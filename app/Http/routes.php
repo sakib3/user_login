@@ -12,8 +12,30 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
 });
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| Api Routes
+|--------------------------------------------------------------------------
+
++--------+----------+------------------+------------------------+----------------------------------------------------------+------------+
+| Domain | Method   | URI              | Name                   | Action                                                   | Middleware |
++--------+----------+------------------+------------------------+----------------------------------------------------------+------------+
+|        | POST     | api/authenticate |                        | App\Http\Controllers\AuthenticateController@authenticate |            |
+|        | GET|HEAD | api/authenticate | api.authenticate.index | App\Http\Controllers\AuthenticateController@index        |            |
++--------+----------+------------------+------------------------+----------------------------------------------------------+------------+*/
+
+
+Route::group(['prefix' => 'api'], function () {
+    Route::resource('authenticate', 'AuthenticateController',['only' => ['index']]);
+    Route::post('authenticate', 'AuthenticateController@authenticate');
+});
+
 
 /*
 |--------------------------------------------------------------------------
