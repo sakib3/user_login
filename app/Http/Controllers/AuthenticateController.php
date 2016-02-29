@@ -7,14 +7,29 @@ use App\Http\Requests;
 use App\Http\Controllers\Controller;
 use JWTAuth;
 use Tymon\JWTAuth\Exceptions\JWTException;
+use App\User;
 
 class AuthenticateController extends Controller
 {
+      public function __construct()
+      {
+         // Apply the jwt.auth middleware to all methods in this controller
+         // except for the authenticate method. We don't want to prevent
+         // the user from retrieving their token if they don't already have it
+         $this->middleware('jwt.auth', ['except' => ['authenticate']]);
+      }
+
       public function index()
       {
-          // Show the authenticated user
-          // is not implemented yet
-          
+          // this will set the token on the object
+          JWTAuth::parseToken();
+
+          // get the authenticated user
+          $user = JWTAuth::parseToken()->authenticate();
+
+          // Return the authenticated user
+          return $user;
+
       }
 
       public function authenticate(Request $request)
