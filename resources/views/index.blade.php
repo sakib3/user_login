@@ -44,5 +44,6 @@
     <script src="js/scripts/authController.js"></script>
     <script src="js/scripts/userController.js"></script>
     <script src="js/scripts/registerController.js"></script>
+    <script src="js/scripts/logoutController.js"></script>
     <script src="js/scripts/navBarDirective.js"></script>
 </html>

@@ -8,6 +8,7 @@
             $authProvider.loginUrl = '/api/authenticate';
             $authProvider.signupUrl = '/api/authenticate/create';
 
+
             // Redirect to the auth state if any other states
             // are requested other than users
 
@@ -26,6 +27,10 @@
                     url: '/register',
                     templateUrl: '../views/registerView.html',
                     controller: 'RegisterController as register'
+                })
+                .state('logout', {
+                    url: '/logout',
+                    controller: 'LogoutController as logout'
                 });
                 $urlRouterProvider.otherwise('/auth');
         });
