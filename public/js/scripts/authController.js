@@ -5,7 +5,7 @@
 var app = angular.module('App');
     app.controller('AuthController', function($scope, $auth, $state){
 
-
+      
       $scope.login = function() {
 
           var credentials = {

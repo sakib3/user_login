@@ -1,7 +1,7 @@
 'use strict';
 
     var app = angular.module('App');
-        app.controller('UserController', function ($scope,$http) {
+        app.controller('UserController', function ($scope,$http,$state) {
 
           // This request will hit the index method in the AuthenticateController
           // on the Laravel side and will return the list of users
@@ -13,8 +13,8 @@
               $scope.updated_at = data.updated_at;
               toastr.success('Logged In!');
           }).error(function(error) {
-              console.log('error');
-              $scope.error = error;
+            // If user is not logged, redirect to the auth state
+            $state.go('auth', {});
 
           });
 
