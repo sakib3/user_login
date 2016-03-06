@@ -5,7 +5,8 @@
 var app = angular.module('App');
     app.controller('AuthController', function($scope, $auth, $state){
 
-      
+      if($auth.isAuthenticated())
+        $state.go('user', {});
       $scope.login = function() {
 
           var credentials = {
