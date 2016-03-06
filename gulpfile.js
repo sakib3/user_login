@@ -17,10 +17,14 @@ elixir(function(mix) {
 
     //enable php unit test
     .phpUnit()
-    
+
     .copy(
       'vendor/bower_components/jquery/dist/jquery.min.js',
       'public/js/vendor/jquery.js'
+    )
+    .copy(
+      'vendor/bower_components/bootstrap/dist/js/bootstrap.min.js',
+      'public/js/vendor/bootstrap.js'
     )
     .copy(
       'vendor/bower_components/angular/angular.min.js',
@@ -31,7 +35,19 @@ elixir(function(mix) {
       'public/js/vendor/satellizer.js'
     )
     .copy(
+      'vendor/bower_components/angular-ui-router/release/angular-ui-router.min.js',
+      'public/js/vendor/angular-ui-router.js'
+    )
+    .copy(
+      'vendor/bower_components/toastr/toastr.min.js',
+      'public/js/vendor/toastr.js'
+    )
+    .copy(
       'vendor/bower_components/bootstrap/dist/css/bootstrap.min.css',
       'public/css/vendor/bootstrap.css'
+    )
+    .copy(
+      'vendor/bower_components/toastr/toastr.min.css',
+      'public/css/vendor/toastr.css'
     );
 });

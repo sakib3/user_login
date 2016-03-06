@@ -33,6 +33,7 @@ Route::get('/', function () {
 
 Route::group(['prefix' => 'api'], function () {
     Route::resource('authenticate', 'AuthenticateController',['only' => ['index']]);
+    Route::post('authenticate/create', 'AuthenticateController@register');
     Route::post('authenticate', 'AuthenticateController@authenticate');
 });
 
