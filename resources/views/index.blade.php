@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="css/vendor/toastr.css">
         <link href="https://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.5.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+        <link href="css/app.css" rel="stylesheet">
         <link rel="apple-touch-icon" href="favicon.ico">
 
         <style>
@@ -23,6 +24,12 @@
             #btn-logout{
               color:black;
 
+            }
+            .form-control{
+                border-radius: 0;
+            }
+            .well, .list-group{
+                border-radius: 0;
             }
         </style>
 

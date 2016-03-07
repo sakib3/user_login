@@ -13,7 +13,7 @@ var elixir = require('laravel-elixir');
 
 elixir(function(mix) {
     mix
-    //.sass('app.scss')
+    .sass('app.scss')
 
     //enable php unit test
     .phpUnit()
