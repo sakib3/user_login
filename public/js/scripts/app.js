@@ -20,6 +20,9 @@
                 })
                 .state('user', {
                     url: '/user',
+                    params: {
+                        notify: false
+                    },
                     templateUrl: '../views/userView.html',
                     controller: 'UserController as user'
                 })
